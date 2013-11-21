@@ -56,7 +56,7 @@ S.add(value[left1_array[2 * N - 1]] == 24);
 
 #Operation correctness
 for i in range(N, 2 * N - 1):
-    print i
+    #print i
     S.add(left1_array[i] >= 0, left1_array[i] < 2 * N)
     S.add(left2_array[i] >= 0, left2_array[i] < 2 * N)
     S.add(right_array[i] >= 0, right_array[i] < 2 * N)
@@ -75,17 +75,17 @@ else:
     print("found solution")
     m = S.model()
     for i in range(N):
-        print i
+        #print i
         output[i] = str(Input[i])
     for i in range(N, 2 * N - 1):
         
-        print int(str(m.eval(left1_array[i])))
-        print m.eval(left2_array[i])
+        #print int(str(m.eval(left1_array[i])))
+        #print m.eval(left2_array[i])
         #output[m[right_array][i]]
         output[int(str(m.eval(right_array[i])))] = "(" + str(output[int(str(m.eval(left1_array[i])))]) + get_symbol(int(str(m.eval(op[i - N])))) + str(output[int(str(m.eval(left2_array[i])))]) + ")"
-    print "outputs:"
-    print [m.eval(leftp[i]) for i in range(N * 2 - 1)]
-    print [m.eval(rightp[i]) for i in range(N * 2 - 1)]
+    #print "outputs:"
+    #print [m.eval(leftp[i]) for i in range(N * 2 - 1)]
+    #print [m.eval(rightp[i]) for i in range(N * 2 - 1)]
     #print m[rightp]
     #print m[value]
     #for i in range(2 * N - 1):
